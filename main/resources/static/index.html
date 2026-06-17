@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Attendance System</h1>
+        <p>Training Attendance Management Dashboard</p>
+    </header>
+    <nav>
+    <a href="/">Participants</a>
+    <a href="/sessions.html">Sessions</a>
+    <a href="/attendances.html">Attendance</a>
+    </nav>
+
+<main>
+    <section class="card">
+        <h2 id="formTitle">Add Participant</h2>
+
+        <form id="participantForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="name">Name</label> 
+                    <input
+                        id="name" 
+                        name="name"
+                        type="text"
+                        placeholder="Participant name"
+                        required
+                        > 
+                        <!-- for, id boleh beda sama java. name harus sama -->
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="participant@mail.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="08123456789"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="batchName">Batch</label>
+                    <input
+                        id="batchName"
+                        name="batchName"
+                        type="text"
+                        placeholder="Batch 1"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button id="submitButton" class="primary-button" type="submit">
+                    Add Participant
+                </button>
+
+                <button
+                    id="cancelButton"
+                    class="secondary-button hidden"
+                    type="button"
+                >
+                    Cancel Edit
+                </button>
+            </div>
+        </form>
+
+        <p id="formMessage" class="message"></p>
+    </section>
+
+    <section class="card">
+        <div class="section-header">
+            <div>
+                <h2>Participants</h2>
+                <p id="participantCount">Total participants: 0</p>
+            </div>
+
+            <button id="refreshButton" class="secondary-button">
+                Refresh
+            </button>
+        </div>
+
+        <p id="tableMessage" class="message">
+            Loading participants...
+        </p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Batch</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+
+                <tbody id="participantTableBody"></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>

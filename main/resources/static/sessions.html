@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Session Management</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<header>
+    <h1>Attendance System</h1>
+    <p>Training Attendance Management Dashboard</p>
+</header>
+
+<nav>
+    <a href="/">Participants</a>
+    <a href="/sessions.html">Sessions</a>
+    <a href="/attendances.html">Attendance</a>
+</nav>
+
+<main>
+    <section class="card">
+        <h2 id="formTitle">Add Training Session</h2>
+
+        <form id="sessionForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="title">Session Title</label>
+                    <input
+                        id="title"
+                        name="title"
+                        type="text"
+                        placeholder="Java Spring Boot Basic"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="sessionDate">Session Date</label>
+                    <input
+                        id="sessionDate"
+                        name="sessionDate"
+                        type="date"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="topic">Topic</label>
+                    <input
+                        id="topic"
+                        name="topic"
+                        type="text"
+                        placeholder="REST API and CRUD"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="mentor">Mentor</label>
+                    <input
+                        id="mentor"
+                        name="mentor"
+                        type="text"
+                        placeholder="Mentor name"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button
+                    id="submitButton"
+                    class="primary-button"
+                    type="submit"
+                >
+                    Add Session
+                </button>
+
+                <button
+                    id="cancelButton"
+                    class="secondary-button hidden"
+                    type="button"
+                >
+                    Cancel Edit
+                </button>
+            </div>
+        </form>
+
+        <p id="formMessage" class="message"></p>
+    </section>
+
+    <section class="card">
+        <div class="section-header">
+            <div>
+                <h2>Training Sessions</h2>
+                <p id="sessionCount">Total sessions: 0</p>
+            </div>
+
+            <button
+                id="refreshButton"
+                class="secondary-button"
+                type="button"
+            >
+                Refresh
+            </button>
+        </div>
+
+        <p id="tableMessage" class="message">
+            Loading sessions...
+        </p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Topic</th>
+                    <th>Mentor</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+
+                <tbody id="sessionTableBody"></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="/js/sessions.js"></script>
+</body>
+</html>

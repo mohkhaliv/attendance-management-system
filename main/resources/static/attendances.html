@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Management</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<header>
+    <h1>Attendance System</h1>
+    <p>Training Attendance Management Dashboard</p>
+</header>
+
+<nav>
+    <a href="/">Participants</a>
+    <a href="/sessions.html">Sessions</a>
+    <a href="/attendances.html">Attendance</a>
+</nav>
+
+<main>
+    <section class="card">
+        <div class="section-header">
+            <div>
+                <h2>Attendance Management</h2>
+                <p>Select a training session to manage attendance.</p>
+            </div>
+
+            <button
+                id="refreshButton"
+                class="secondary-button"
+                type="button"
+            >
+                Refresh
+            </button>
+        </div>
+
+        <div class="attendance-toolbar">
+            <div class="form-group session-selector">
+                <label for="sessionSelect">Training Session</label>
+
+                <select id="sessionSelect">
+                    <option value="">Select a session</option>
+                </select>
+            </div>
+
+            <button
+                id="saveAllButton"
+                class="primary-button"
+                type="button"
+            >
+                Save All Attendance
+            </button>
+        </div>
+
+        <p id="attendanceMessage" class="message"></p>
+
+        <div class="attendance-summary">
+            <div class="summary-item">
+                <strong id="presentCount">0</strong>
+                <span>Present</span>
+            </div>
+
+            <div class="summary-item">
+                <strong id="lateCount">0</strong>
+                <span>Late</span>
+            </div>
+
+            <div class="summary-item">
+                <strong id="absentCount">0</strong>
+                <span>Absent</span>
+            </div>
+
+            <div class="summary-item">
+                <strong id="excusedCount">0</strong>
+                <span>Excused</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="section-header">
+            <div>
+                <h2>Participant Attendance</h2>
+                <p id="participantCount">Total participants: 0</p>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Participant</th>
+                    <th>Batch</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Note</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+
+                <tbody id="attendanceTableBody"></tbody>
+            </table>
+        </div>
+
+        <p id="tableMessage" class="message">
+            Select a training session first.
+        </p>
+    </section>
+</main>
+
+<script src="/js/attendances.js"></script>
+</body>
+</html>
